@@ -7,8 +7,23 @@ document.addEventListener('DOMContentLoaded', () => {
             const question = item.querySelector('.faq-question');
             question.addEventListener('click', () => {
                 const isActive = item.classList.contains('active');
-                faqItems.forEach(faq => faq.classList.remove('active'));
-                if (!isActive) item.classList.add('active');
+                const answer = item.querySelector('.faq-answer');
+
+                // Close all others
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-answer').style.maxHeight = null;
+                    }
+                });
+
+                // Toggle current
+                item.classList.toggle('active', !isActive);
+                if (!isActive) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                } else {
+                    answer.style.maxHeight = null;
+                }
             });
         });
     }
@@ -25,12 +40,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const message = document.getElementById('message').value;
 
             const text = `*New Contact Inquiry*\n\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${phone}\n*Subject:* ${subject}\n\n*Message:*\n${message}`;
-            
-            // Ensure WHATSAPP_NUM is globally available via app.js
+
             const destNum = typeof WHATSAPP_NUM !== 'undefined' ? WHATSAPP_NUM.replace('+', '') : '917358641670';
             const url = `https://wa.me/${destNum}?text=${encodeURIComponent(text)}`;
             window.open(url, '_blank');
             contactForm.reset();
+
+            if (typeof showToast === 'function') {
+                showToast('Message sent via WhatsApp!', 'fa-paper-plane');
+            }
         });
     }
 
@@ -38,15 +56,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const featuredGrid = document.getElementById('featured-products-grid');
     if (featuredGrid && typeof productsData !== 'undefined') {
         const featured = productsData.slice(0, 3);
-        featuredGrid.innerHTML = featured.map(item => `
-            <div class="product-card animate-on-scroll" style="background: var(--white); border-radius: var(--radius-md); overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.05); display: flex; flex-direction: column; cursor: pointer;" onclick="window.location.href='products.html'">
-                <div style="position: relative; padding-top: 100%; background: #eae8e1;">
-                    <img src="${item.image}" alt="${item.name}" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover;" onerror="this.src='./logo.png'">
+        featuredGrid.innerHTML = featured.map((item, i) => `
+            <div class="product-card animate-on-scroll delay-${i + 1}" onclick="window.location.href='products.html'">
+                <div class="product-card-image">
+                    <img src="${item.image}" alt="${item.name}" loading="lazy" onerror="this.src='./assets/logo.png'">
                 </div>
-                <div style="padding: 1.5rem; flex: 1; display: flex; flex-direction: column;">
-                    <div style="font-size: 0.85rem; color: var(--secondary-gray); text-transform: uppercase; font-weight: 600; letter-spacing: 1px; margin-bottom: 0.5rem;">${item.category}</div>
-                    <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">${item.name}</h3>
-                    <div style="font-weight: 700; color: var(--primary-black); font-size: 1.1rem;">₹${item.price.toLocaleString('en-IN')}</div>
+                <div class="product-card-body">
+                    <div class="product-card-category">${item.category}</div>
+                    <h3>${item.name}</h3>
+                    <div class="product-card-price">₹${item.price.toLocaleString('en-IN')}</div>
                 </div>
             </div>
         `).join('');
@@ -64,31 +82,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function renderProducts(items) {
             if (items.length === 0) {
-                shopGrid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 4rem 0;"><p style="font-size: 1.2rem; color: var(--secondary-gray);">No items match your filter.</p></div>';
+                shopGrid.innerHTML = '<div class="no-results"><i class="fas fa-search" style="font-size: 2.5rem; color: var(--light-gray); margin-bottom: 1rem; display: block;"></i><p>No items match your filter.</p></div>';
                 return;
             }
 
-            shopGrid.innerHTML = items.map(item => {
+            shopGrid.innerHTML = items.map((item, i) => {
                 const sizeOptions = item.sizes.map(s => `<option value="${s}">${s}</option>`).join('');
                 return `
-                <div class="product-card" style="background: var(--white); border-radius: var(--radius-md); overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-                    <div style="position: relative; padding-top: 100%; background: #eae8e1;">
-                        <img src="${item.image}" alt="${item.name}" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover;" onerror="this.src='./logo.png'">
+                <div class="product-card animate-on-scroll delay-${(i % 4) + 1}">
+                    <div class="product-card-image">
+                        <img src="${item.image}" alt="${item.name}" loading="lazy" onerror="this.src='./assets/logo.png'">
                     </div>
-                    <div style="padding: 1.5rem; flex: 1; display: flex; flex-direction: column;">
-                        <div style="font-size: 0.85rem; color: var(--secondary-gray); text-transform: uppercase; font-weight: 600; letter-spacing: 1px; margin-bottom: 0.5rem;">${item.category}</div>
-                        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">${item.name}</h3>
-                        <div style="font-weight: 700; color: var(--primary-black); font-size: 1.1rem; margin-bottom: 1rem;">₹${item.price.toLocaleString('en-IN')}</div>
+                    <div class="product-card-body">
+                        <div class="product-card-category">${item.category}</div>
+                        <h3>${item.name}</h3>
+                        <div class="product-card-price">₹${item.price.toLocaleString('en-IN')}</div>
                         
-                        <div style="margin-top: auto;">
-                            <label style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.25rem; display: block;">Select Size <a href="size-guide.html" style="text-decoration: underline; color: var(--secondary-gray); font-size: 0.75rem; font-weight: 400; float: right;">Size Guide</a></label>
-                            <select id="size-${item.id}" style="margin-bottom: 1rem;">
+                        <div class="product-card-actions">
+                            <label>Select Size <a href="size-guide.html" class="size-guide-link">Size Guide</a></label>
+                            <select id="size-${item.id}">
                                 <option value="" disabled selected>Choose a size</option>
                                 ${sizeOptions}
                             </select>
-                            <div style="display: flex; gap: 0.5rem; flex-direction: column;">
-                                <button onclick="window.handleAdd('${item.id}', this)" class="btn btn-gold" style="width: 100%;"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
-                                <button onclick="window.handleBuyNow('${item.id}', this)" class="btn btn-black" style="width: 100%;"><i class="fab fa-whatsapp"></i> Buy Now</button>
+                            <div class="product-card-btns">
+                                <button onclick="window.handleAdd('${item.id}', this)" class="btn btn-gold"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                                <button onclick="window.handleBuyNow('${item.id}', this)" class="btn btn-black"><i class="fab fa-whatsapp"></i> Buy Now</button>
                             </div>
                         </div>
                     </div>
@@ -129,12 +147,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Since onclick in HTML runs in global scope, we expose these logic handlers here.
+// Global handlers for product buttons
 window.handleAdd = (id, btnContext) => {
-    // Relative find since there could be multiple ID matches if we repeat it
     let sizeSelect = document.getElementById(`size-${id}`);
     if (btnContext) {
-      sizeSelect = btnContext.parentElement.parentElement.querySelector('select');
+      sizeSelect = btnContext.closest('.product-card-actions').querySelector('select');
     }
     if (!sizeSelect || !sizeSelect.value) return alert("Please select a size");
     const size = sizeSelect.value;
@@ -145,7 +162,7 @@ window.handleAdd = (id, btnContext) => {
 window.handleBuyNow = (id, btnContext) => {
     let sizeSelect = document.getElementById(`size-${id}`);
     if (btnContext) {
-      sizeSelect = btnContext.parentElement.parentElement.querySelector('select');
+      sizeSelect = btnContext.closest('.product-card-actions').querySelector('select');
     }
     if (!sizeSelect || !sizeSelect.value) return alert("Please select a size");
     const size = sizeSelect.value;

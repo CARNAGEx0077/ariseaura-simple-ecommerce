@@ -9,6 +9,17 @@
 </head>
 <body>
 
+    <!-- Preloader -->
+    <div class="preloader" aria-hidden="true">
+        <div class="preloader-inner">
+            <img src="./assets/logo.png" alt="" class="preloader-logo">
+            <div class="preloader-bar"></div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" aria-hidden="true"></div>
+
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -206,33 +217,13 @@
         </div>
     </footer>
 
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/+917358641670" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <script src="./js/products.js"></script>
     <script src="./js/app.js"></script>
     <script defer src="./js/page-scripts.js"></script>
-    <script>
-        // FAQ Accordion Logic
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const item = button.parentElement;
-                const answer = item.querySelector('.faq-answer');
-                
-                // Close all others
-                document.querySelectorAll('.faq-item').forEach(otherItem => {
-                    if (otherItem !== item && otherItem.classList.contains('active')) {
-                        otherItem.classList.remove('active');
-                        otherItem.querySelector('.faq-answer').style.maxHeight = null;
-                    }
-                });
-
-                // Toggle current
-                item.classList.toggle('active');
-                if (item.classList.contains('active')) {
-                    answer.style.maxHeight = answer.scrollHeight + 'px';
-                } else {
-                    answer.style.maxHeight = null;
-                }
-            });
-        });
-    </script>
 </body>
 </html>

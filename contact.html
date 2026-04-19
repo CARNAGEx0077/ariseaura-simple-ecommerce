@@ -11,6 +11,17 @@
 
 <body>
 
+    <!-- Preloader -->
+    <div class="preloader" aria-hidden="true">
+        <div class="preloader-inner">
+            <img src="./assets/logo.png" alt="" class="preloader-logo">
+            <div class="preloader-bar"></div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" aria-hidden="true"></div>
+
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -251,34 +262,14 @@
         </div>
     </footer>
 
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/+917358641670" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <script src="./js/products.js"></script>
     <script src="./js/app.js"></script>
     <script defer src="./js/page-scripts.js"></script>
-    <script>
-        // Contact Form Submission to WhatsApp
-        document.addEventListener('DOMContentLoaded', () => {
-            const contactForm = document.querySelector('form');
-            if (contactForm) {
-                contactForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-
-                    const name = document.getElementById('name')?.value || '';
-                    const email = document.getElementById('email')?.value || '';
-                    const phone = document.getElementById('phone')?.value || '';
-                    const subject = document.getElementById('subject')?.value || 'General Inquiry';
-                    const message = document.getElementById('message')?.value || '';
-
-                    const text = `*Contact Form Submission*\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nSubject: ${subject}\n\nMessage:\n${message}`;
-                    const url = `https://wa.me/+917358641670?text=${encodeURIComponent(text)}`;
-                    window.open(url, '_blank');
-
-                    // Reset form
-                    contactForm.reset();
-                    alert('Thank you! We will get back to you soon via WhatsApp.');
-                });
-            }
-        });
-    </script>
 </body>
 
 </html>
