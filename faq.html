@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | Arise Aura</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .faq-item {
+            border-bottom: 1px solid var(--light-gray);
+        }
+        .faq-question {
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: left;
+            padding: 1.5rem 0;
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-black);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-question i {
+            transition: transform 0.3s ease;
+            color: var(--gold-accent);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: var(--secondary-gray);
+        }
+        .faq-answer p {
+            padding-bottom: 1.5rem;
+            margin: 0;
+        }
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="Arise Aura Logo" id="header-logo">
+                <span class="brand-name">ARISE <span class="aura-gold">AURA</span></span>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="custom-design.html">Custom Design</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="cart-icon-btn cart-toggle-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-badge cart-count">0</span>
+                </button>
+                <button class="mobile-toggle" id="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="menu-overlay"></div>
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <img src="assets/logo.png" alt="Arise Aura" style="height: 32px;">
+            <button class="close-menu" id="close-menu"><i class="fas fa-times"></i></button>
+        </div>
+        <nav class="mobile-nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="custom-design.html">Custom Design</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="faq.html" class="active">FAQ</a>
+            <a href="size-guide.html">Size Guide</a>
+        </nav>
+        <div class="mobile-menu-footer">
+            <button class="btn btn-gold cart-toggle-btn" style="width: 100%;">
+                <i class="fas fa-shopping-bag"></i> View Cart (<span class="cart-count">0</span>)
+            </button>
+            <br><br>
+            <a href="https://wa.me/+917358641670" target="_blank" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                <i class="fab fa-whatsapp"></i> WhatsApp Us
+            </a>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items-container"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-amount">₹0</span>
+            </div>
+            <button class="btn btn-gold" id="checkout-btn" style="width: 100%; justify-content: center; font-size: 1.1rem; padding: 1rem;">
+                <i class="fab fa-whatsapp"></i> Buy All on WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main style="padding-top: var(--header-height);">
+
+        <section class="section" style="background-color: var(--primary-black); color: var(--white); padding: 4rem 0;">
+            <div class="container text-center animate-on-scroll">
+                <h1 style="color: var(--white); margin-bottom: 0.5rem;">Frequently Asked Questions</h1>
+                <p style="color: var(--light-gray); max-width: 600px; margin: 0 auto;">Find answers to your questions about our products, sizing, and policies.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container" style="max-width: 800px;">
+                
+                <div class="animate-on-scroll" style="margin-bottom: 3rem;">
+                    <h2 style="font-size: 1.75rem; margin-bottom: 1rem; color: var(--gold-accent);">Ordering</h2>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">How do I place an order? <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer"><p>You can browse our collection, add items to your cart, and click "Buy All on WhatsApp" to securely place your order directly with our sales team.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Can I modify my order after placing it? <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer"><p>Orders can only be modified within 12 hours of placing them via WhatsApp before they enter production or dispatch.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">What payment methods do you accept? <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer"><p>We accept UPI, Bank Transfers, and major Credit/Debit cards. Payment links are shared securely via WhatsApp during checkout.</p></div>
+                    </div>
+                </div>
+
+                <div class="animate-on-scroll" style="margin-bottom: 3rem;">
+                    <h2 style="font-size: 1.75rem; margin-bottom: 1rem; color: var(--gold-accent);">Shipping & Delivery</h2>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">How long does delivery take? <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer"><p>Standard delivery takes 5-7 business days for ready-made items. Custom orders require an additional 3-5 days for production.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">How can I track my order? <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer"><p>Once dispatched, we will send an exclusive tracking link and AWB number to your WhatsApp number.</p></div>
+                    </div>
+                </div>
+
+                <div class="animate-on-scroll" style="margin-bottom: 3rem;">
+                    <h2 style="font-size: 1.75rem; margin-bottom: 1rem; color: var(--gold-accent);">Custom Jerseys</h2>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">How does the custom design process work? <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer"><p>Check out our <a href="custom-design.html" style="text-decoration: underline; color: var(--primary-black);">Custom Design</a> page for a full step-by-step breakdown of how we turn your vision into reality.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">What's the minimum order quantity for custom jerseys? <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer"><p>We support both team orders and individual requests. The MOQ for full sublimated team wear is usually 5 pieces, but single prints are possible for pre-made styles.</p></div>
+                    </div>
+                </div>
+
+                <div class="animate-on-scroll" style="margin-bottom: 3rem;">
+                    <h2 style="font-size: 1.75rem; margin-bottom: 1rem; color: var(--gold-accent);">Product Care</h2>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">How do I wash my jersey? <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer"><p>Machine wash cold with like colors inside out. Do not use bleach or fabric softeners. Tumble dry on low heat or hang dry for best results.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">How do I maintain print quality? <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer"><p>Never iron directly on the printed designs. Iron inside out on minimum heat if necessary, though our premium fabrics rarely wrinkle.</p></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="logo" style="margin-bottom: 1.5rem; display: inline-flex; align-items: center; text-decoration: none;">
+                        <img src="./assets/logo.png" alt="Arise Aura Logo" style="height: 50px; filter: invert(1);">
+                        <span class="brand-name" style="color: var(--primary-black); margin-top: 0;">ARISE <span class="aura-gold">AURA</span></span>
+                    </a>
+                    <p class="footer-desc">Premium sports jerseys and custom athletic wear designed to elevate your game and your aura.</p>
+                    <div class="footer-socials">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="products.html">Shop Collection</a>
+                        <a href="custom-design.html">Custom Design</a>
+                        <a href="about.html">About Us</a>
+                        <a href="contact.html">Contact Us</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Support</h4>
+                    <div class="footer-links">
+                        <a href="faq.html">FAQ</a>
+                        <a href="size-guide.html">Size Guide</a>
+                        <a href="policy.html">Shipping Policy</a>
+                        <a href="policy.html">Returns & Exchanges</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <div class="footer-links">
+                        <a href="mailto:contact@arisearua.com"><i class="far fa-envelope"></i> contact@arisearua.com</a>
+                        <a href="tel:+917358641670"><i class="fas fa-phone"></i> +91 73586 41670</a>
+                        <a href="https://wa.me/+917358641670" target="_blank" style="color: #25D366;"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 Arise Aura. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/products.js"></script>
+    <script src="./js/app.js"></script>
+    <script>
+        // FAQ Accordion Logic
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const answer = item.querySelector('.faq-answer');
+                
+                // Close all others
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-answer').style.maxHeight = null;
+                    }
+                });
+
+                // Toggle current
+                item.classList.toggle('active');
+                if (item.classList.contains('active')) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                } else {
+                    answer.style.maxHeight = null;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

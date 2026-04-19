@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Size Guide | Arise Aura</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .size-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 3rem;
+            background-color: var(--white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+        }
+
+        .size-table th,
+        .size-table td {
+            padding: 1.25rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .size-table th {
+            background-color: var(--primary-black);
+            color: var(--white);
+            font-family: var(--font-heading);
+            font-weight: 600;
+        }
+
+        .size-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .size-table tr:hover td {
+            background-color: var(--bg-color);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="Arise Aura Logo" id="header-logo">
+                <span class="brand-name">ARISE <span class="aura-gold">AURA</span></span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="custom-design.html">Custom Design</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="cart-icon-btn cart-toggle-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-badge cart-count">0</span>
+                </button>
+                <button class="mobile-toggle" id="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="menu-overlay"></div>
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <img src="./assets/logo.png" alt="Arise Aura" style="height: 32px;">
+            <button class="close-menu" id="close-menu"><i class="fas fa-times"></i></button>
+        </div>
+        <nav class="mobile-nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="custom-design.html">Custom Design</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="faq.html">FAQ</a>
+            <a href="size-guide.html" class="active">Size Guide</a>
+        </nav>
+        <div class="mobile-menu-footer">
+            <button class="btn btn-gold cart-toggle-btn" style="width: 100%;">
+                <i class="fas fa-shopping-bag"></i> View Cart (<span class="cart-count">0</span>)
+            </button>
+            <br><br>
+            <a href="https://wa.me/+917358641670" target="_blank" class="btn btn-primary"
+                style="width: 100%; justify-content: center;">
+                <i class="fab fa-whatsapp"></i> WhatsApp Us
+            </a>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items-container"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-amount">₹0</span>
+            </div>
+            <button class="btn btn-gold" id="checkout-btn"
+                style="width: 100%; justify-content: center; font-size: 1.1rem; padding: 1rem;">
+                <i class="fab fa-whatsapp"></i> Buy All on WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main style="padding-top: var(--header-height);">
+
+        <section class="section" style="background-color: var(--primary-black); color: var(--white); padding: 4rem 0;">
+            <div class="container text-center animate-on-scroll">
+                <h1 style="color: var(--white); margin-bottom: 0.5rem;">Jersey Size Guide</h1>
+                <p style="color: var(--light-gray); max-width: 600px; margin: 0 auto;">Find your perfect fit for maximum
+                    performance and aesthetics.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container" style="max-width: 900px;">
+
+                <div class="animate-on-scroll" style="overflow-x: auto;">
+                    <table class="size-table">
+                        <thead>
+                            <tr>
+                                <th>Size</th>
+                                <th>Chest (inches)</th>
+                                <th>Length (inches)</th>
+                                <th>Shoulder (inches)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>XS</strong></td>
+                                <td>36 - 38</td>
+                                <td>26 - 27</td>
+                                <td>16 - 17</td>
+                            </tr>
+                            <tr>
+                                <td><strong>S</strong></td>
+                                <td>38 - 40</td>
+                                <td>27 - 28</td>
+                                <td>17 - 18</td>
+                            </tr>
+                            <tr>
+                                <td><strong>M</strong></td>
+                                <td>40 - 42</td>
+                                <td>28 - 29</td>
+                                <td>18 - 19</td>
+                            </tr>
+                            <tr>
+                                <td><strong>L</strong></td>
+                                <td>42 - 44</td>
+                                <td>29 - 30</td>
+                                <td>19 - 20</td>
+                            </tr>
+                            <tr>
+                                <td><strong>XL</strong></td>
+                                <td>44 - 46</td>
+                                <td>30 - 31</td>
+                                <td>20 - 21</td>
+                            </tr>
+                            <tr>
+                                <td><strong>XXL</strong></td>
+                                <td>46 - 48</td>
+                                <td>31 - 32</td>
+                                <td>21 - 22</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 4rem;">
+                    <div class="animate-on-scroll">
+                        <h2 style="margin-bottom: 1.5rem; font-size: 1.8rem;">How to Measure</h2>
+                        <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.5rem;">
+                            <li>
+                                <h4 style="color: var(--gold-accent); margin-bottom: 0.25rem;">1. Chest</h4>
+                                <p>Measure around the fullest part of your chest, keeping the measuring tape horizontal.
+                                </p>
+                            </li>
+                            <li>
+                                <h4 style="color: var(--gold-accent); margin-bottom: 0.25rem;">2. Length</h4>
+                                <p>Measure from the highest point of the shoulder down to the desired hemline.</p>
+                            </li>
+                            <li>
+                                <h4 style="color: var(--gold-accent); margin-bottom: 0.25rem;">3. Shoulder</h4>
+                                <p>Measure straight across the back from the edge of one shoulder to the other.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="animate-on-scroll"
+                        style="background-color: var(--white); padding: 2rem; border-radius: var(--radius-md); box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+                        <h2 style="margin-bottom: 1.5rem; font-size: 1.8rem;">Pro Fit Tips</h2>
+
+                        <h4 style="margin-bottom: 0.25rem;">Slim Fit vs Regular Fit</h4>
+                        <p style="margin-bottom: 1.5rem;">Our authentic game jerseys naturally feature a slimmer, more
+                            athletic cut to prevent drag. For a more relaxed streetwear fit, we recommend sizing up one
+                            size.</p>
+
+                        <h4 style="margin-bottom: 0.25rem;">Between Sizes?</h4>
+                        <p>If your measurements fall between two sizes, choose the smaller size for a tighter fit or the
+                            larger size for a looser fit.</p>
+                    </div>
+                </div>
+
+            </div>
+            <style>
+                @media (max-width: 768px) {
+                    div[style*="grid-template-columns: 1fr 1fr"] {
+                        grid-template-columns: 1fr !important;
+                    }
+                }
+            </style>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="logo" style="margin-bottom: 1.5rem; display: inline-flex; align-items: center; text-decoration: none;">
+                        <img src="./assets/logo.png" alt="Arise Aura Logo" style="height: 50px; filter: invert(1);">
+                        <span class="brand-name" style="color: var(--primary-black); margin-top: 0;">ARISE <span class="aura-gold">AURA</span></span>
+                    </a>
+                    <p class="footer-desc">Premium sports jerseys and custom athletic wear designed to elevate your game
+                        and your aura.</p>
+                    <div class="footer-socials">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="products.html">Shop Collection</a>
+                        <a href="custom-design.html">Custom Design</a>
+                        <a href="about.html">About Us</a>
+                        <a href="contact.html">Contact Us</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Support</h4>
+                    <div class="footer-links">
+                        <a href="faq.html">FAQ</a>
+                        <a href="size-guide.html">Size Guide</a>
+                        <a href="policy.html">Shipping Policy</a>
+                        <a href="policy.html">Returns & Exchanges</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <div class="footer-links">
+                        <a href="mailto:contact@arisearua.com"><i class="far fa-envelope"></i> contact@arisearua.com</a>
+                        <a href="tel:+917358641670"><i class="fas fa-phone"></i> +91 73586 41670</a>
+                        <a href="https://wa.me/+917358641670" target="_blank" style="color: #25D366;"><i
+                                class="fab fa-whatsapp"></i> WhatsApp Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 Arise Aura. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/products.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>

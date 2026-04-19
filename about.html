@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Arise Aura</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="Arise Aura Logo" id="header-logo">
+                <span class="brand-name">ARISE <span class="aura-gold">AURA</span></span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="custom-design.html">Custom Design</a>
+                <a href="about.html" class="active">About Us</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="cart-icon-btn cart-toggle-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-badge cart-count">0</span>
+                </button>
+                <button class="mobile-toggle" id="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="menu-overlay"></div>
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <img src="./assets/logo.png" alt="Arise Aura" style="height: 32px;">
+            <button class="close-menu" id="close-menu"><i class="fas fa-times"></i></button>
+        </div>
+        <nav class="mobile-nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="custom-design.html">Custom Design</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="faq.html">FAQ</a>
+            <a href="size-guide.html">Size Guide</a>
+        </nav>
+        <div class="mobile-menu-footer">
+            <button class="btn btn-gold cart-toggle-btn" style="width: 100%;">
+                <i class="fas fa-shopping-bag"></i> View Cart (<span class="cart-count">0</span>)
+            </button>
+            <br><br>
+            <a href="https://wa.me/+917358641670" target="_blank" class="btn btn-primary"
+                style="width: 100%; justify-content: center;">
+                <i class="fab fa-whatsapp"></i> WhatsApp Us
+            </a>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items-container"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-amount">₹0</span>
+            </div>
+            <button class="btn btn-gold" id="checkout-btn"
+                style="width: 100%; justify-content: center; font-size: 1.1rem; padding: 1rem;">
+                <i class="fab fa-whatsapp"></i> Buy All on WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main style="padding-top: var(--header-height);">
+
+        <section class="section" style="background-color: var(--primary-black); color: var(--white); padding: 4rem 0;">
+            <div class="container text-center animate-on-scroll">
+                <h1 style="color: var(--white); margin-bottom: 0.5rem;">About Arise Aura</h1>
+                <p style="color: var(--light-gray); max-width: 600px; margin: 0 auto;">Redefining the standard of
+                    premium athletic wear.</p>
+            </div>
+        </section>
+
+        <!-- Story Section -->
+        <section class="section">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: center;"
+                    class="about-grid">
+                    <div class="animate-on-scroll">
+                        <div
+                            style="aspect-ratio: 4/5; background-color: var(--bg-color); border-radius: var(--radius-md); overflow: hidden; position: relative;">
+                            <!-- Placeholder for founder image -->
+                            <div
+                                style="position: absolute; top:0; left:0; width:100%; height:100%; display: flex; align-items: center; justify-content: center; color: var(--light-gray); font-size: 4rem; background: linear-gradient(45deg, #eae8e1, #faf9f6);">
+                                <i class="fas fa-image"></i>
+                            </div>
+                            <div
+                                style="position: absolute; bottom: 0; left:0; width: 100%; padding: 1.5rem; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: var(--white);">
+                                <h3 style="color: var(--white); margin-bottom: 0px;">[Founder Name]</h3>
+                                <p style="color: var(--gold-accent); font-size: 0.9rem;">Founder & CEO</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="animate-on-scroll">
+                        <h2 style="margin-bottom: 1.5rem;">Our Story</h2>
+                        <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">Arise Aura was born out of a passion for
+                            sports and an uncompromising demand for quality. We noticed a gap in the market between
+                            generic, low-quality team wear and overly expensive professional gear. Our mission was
+                            simple: bridge that gap by offering premium, luxury-grade sports jerseys accessible to
+                            everyone.</p>
+
+                        <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">We don't just print jerseys; we craft
+                            identities. Whether you're a Sunday league team, an individual athlete, or a loyal
+                            supporter, we believe you deserve gear that looks incredible, feels comfortable, and
+                            performs under pressure.</p>
+
+                        <h3 style="margin-top: 2rem; margin-bottom: 1rem; font-size: 1.5rem;">Our Mission</h3>
+                        <p style="font-size: 1.1rem;">To elevate the athlete's aura through innovative design, premium
+                            fabrics, and unmatched customization.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Promise -->
+        <section class="section" style="background-color: var(--bg-color);">
+            <div class="container text-center animate-on-scroll">
+                <h2 style="margin-bottom: 3rem;">Our Promise to You</h2>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div
+                        style="background-color: var(--white); padding: 3rem 2rem; border-radius: var(--radius-md); box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+                        <i class="fas fa-check-circle"
+                            style="font-size: 2.5rem; color: var(--gold-accent); margin-bottom: 1.5rem;"></i>
+                        <h3 style="margin-bottom: 1rem;">Uncompromising Quality</h3>
+                        <p>We source only the finest dry-fit and breathable fabrics to ensure peak performance and
+                            long-lasting durability.</p>
+                    </div>
+
+                    <div
+                        style="background-color: var(--white); padding: 3rem 2rem; border-radius: var(--radius-md); box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+                        <i class="fas fa-fingerprint"
+                            style="font-size: 2.5rem; color: var(--gold-accent); margin-bottom: 1.5rem;"></i>
+                        <h3 style="margin-bottom: 1rem;">Authentic Customization</h3>
+                        <p>From crisp sublimated prints right down to the precise stitching, every detail is handled
+                            with absolute care.</p>
+                    </div>
+
+                    <div
+                        style="background-color: var(--white); padding: 3rem 2rem; border-radius: var(--radius-md); box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+                        <i class="fas fa-heart"
+                            style="font-size: 2.5rem; color: var(--gold-accent); margin-bottom: 1.5rem;"></i>
+                        <h3 style="margin-bottom: 1rem;">Customer Satisfaction</h3>
+                        <p>Your aura is our priority. We work closely with our clients to ensure the final product
+                            exceeds expectations.</p>
+                    </div>
+                </div>
+            </div>
+            <style>
+                @media (max-width: 768px) {
+                    .about-grid {
+                        grid-template-columns: 1fr !important;
+                    }
+                }
+            </style>
+        </section>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="logo" style="margin-bottom: 1.5rem; display: inline-flex; align-items: center; text-decoration: none;">
+                        <img src="./assets/logo.png" alt="Arise Aura Logo" style="height: 50px; filter: invert(1);">
+                        <span class="brand-name" style="color: var(--primary-black); margin-top: 0;">ARISE <span class="aura-gold">AURA</span></span>
+                    </a>
+                    <p class="footer-desc">Premium sports jerseys and custom athletic wear designed to elevate your game
+                        and your aura.</p>
+                    <div class="footer-socials">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="products.html">Shop Collection</a>
+                        <a href="custom-design.html">Custom Design</a>
+                        <a href="about.html">About Us</a>
+                        <a href="contact.html">Contact Us</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Support</h4>
+                    <div class="footer-links">
+                        <a href="faq.html">FAQ</a>
+                        <a href="size-guide.html">Size Guide</a>
+                        <a href="policy.html">Shipping Policy</a>
+                        <a href="policy.html">Returns & Exchanges</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <div class="footer-links">
+                        <a href="mailto:contact@arisearua.com"><i class="far fa-envelope"></i> [EMAIL_ADDRESS]</a>
+                        <a href="tel:+917358641670"><i class="fas fa-phone"></i> +91 73586 41670</a>
+                        <a href="https://wa.me/+917358641670" target="_blank" style="color: #25D366;"><i
+                                class="fab fa-whatsapp"></i> WhatsApp Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 Arise Aura. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/products.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>

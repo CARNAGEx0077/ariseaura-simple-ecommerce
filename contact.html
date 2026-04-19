@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Arise Aura</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="Arise Aura Logo" id="header-logo">
+                <span class="brand-name">ARISE <span class="aura-gold">AURA</span></span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="custom-design.html">Custom Design</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="cart-icon-btn cart-toggle-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-badge cart-count">0</span>
+                </button>
+                <button class="mobile-toggle" id="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="menu-overlay"></div>
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <img src="./assets/logo.png" alt="Arise Aura" style="height: 32px;">
+            <button class="close-menu" id="close-menu"><i class="fas fa-times"></i></button>
+        </div>
+        <nav class="mobile-nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="custom-design.html">Custom Design</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="faq.html">FAQ</a>
+            <a href="size-guide.html">Size Guide</a>
+        </nav>
+        <div class="mobile-menu-footer">
+            <button class="btn btn-gold cart-toggle-btn" style="width: 100%;">
+                <i class="fas fa-shopping-bag"></i> View Cart (<span class="cart-count">0</span>)
+            </button>
+            <br><br>
+            <a href="https://wa.me/+917358641670" target="_blank" class="btn btn-primary"
+                style="width: 100%; justify-content: center;">
+                <i class="fab fa-whatsapp"></i> WhatsApp Us
+            </a>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items-container"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-amount">₹0</span>
+            </div>
+            <button class="btn btn-gold" id="checkout-btn"
+                style="width: 100%; justify-content: center; font-size: 1.1rem; padding: 1rem;">
+                <i class="fab fa-whatsapp"></i> Buy All on WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main style="padding-top: var(--header-height);">
+
+        <section class="section" style="background-color: var(--primary-black); color: var(--white); padding: 4rem 0;">
+            <div class="container text-center animate-on-scroll">
+                <h1 style="color: var(--white); margin-bottom: 0.5rem;">Contact Us</h1>
+                <p style="color: var(--light-gray); max-width: 600px; margin: 0 auto;">Have a question or want to place
+                    an order? Get in touch with our team.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;" class="contact-grid">
+
+                    <!-- Contact Info -->
+                    <div class="animate-on-scroll">
+                        <h2 style="margin-bottom: 2rem;">Get In Touch</h2>
+
+                        <div style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 2rem;">
+                            <div
+                                style="width: 50px; height: 50px; border-radius: var(--radius-sm); background-color: var(--bg-color); display: flex; align-items: center; justify-content: center; color: var(--gold-accent); font-size: 1.5rem; flex-shrink: 0;">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 0.25rem;">Our Location</h4>
+                                <p>123 Arise Aura Plaza, Sportswear District<br>Navi Mumbai, Maharashtra 400705</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 2rem;">
+                            <div
+                                style="width: 50px; height: 50px; border-radius: var(--radius-sm); background-color: var(--bg-color); display: flex; align-items: center; justify-content: center; color: var(--gold-accent); font-size: 1.5rem; flex-shrink: 0;">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 0.25rem;">Email Us</h4>
+                                <p><a href="mailto:contact@arisearua.com">contact@arisearua.com</a></p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 2rem;">
+                            <div
+                                style="width: 50px; height: 50px; border-radius: var(--radius-sm); background-color: var(--bg-color); display: flex; align-items: center; justify-content: center; color: var(--gold-accent); font-size: 1.5rem; flex-shrink: 0;">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 0.25rem;">Call / WhatsApp</h4>
+                                <p><a href="tel:+917358641670">+91 73586 41670</a></p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <div
+                                style="width: 50px; height: 50px; border-radius: var(--radius-sm); background-color: var(--bg-color); display: flex; align-items: center; justify-content: center; color: var(--gold-accent); font-size: 1.5rem; flex-shrink: 0;">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 0.25rem;">Business Hours</h4>
+                                <p>Mon - Sat: 10:00 AM - 8:00 PM<br>Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="animate-on-scroll"
+                        style="background-color: var(--white); padding: 2.5rem; border-radius: var(--radius-md); box-shadow: 0 10px 40px rgba(0,0,0,0.05);">
+                        <h3 style="margin-bottom: 1.5rem;">Send a Message</h3>
+                        <form id="contact-form">
+                            <div style="margin-bottom: 1.5rem;">
+                                <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Full Name
+                                    *</label>
+                                <input type="text" id="name" required placeholder="John Doe">
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;"
+                                class="form-row">
+                                <div>
+                                    <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Email
+                                        Address *</label>
+                                    <input type="email" id="email" required placeholder="john@example.com">
+                                </div>
+                                <div>
+                                    <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Phone
+                                        (Optional)</label>
+                                    <input type="tel" id="phone" placeholder="+91 XXXX XXXX">
+                                </div>
+                            </div>
+
+                            <div style="margin-bottom: 1.5rem;">
+                                <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Subject</label>
+                                <select id="subject">
+                                    <option value="General Inquiry">General Inquiry</option>
+                                    <option value="Custom Order">Custom Order Quote</option>
+                                    <option value="Support">Order Support</option>
+                                    <option value="Feedback">Feedback</option>
+                                </select>
+                            </div>
+
+                            <div style="margin-bottom: 1.5rem;">
+                                <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Message
+                                    *</label>
+                                <textarea id="message" rows="4" required placeholder="How can we help you?"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <style>
+                @media (max-width: 768px) {
+                    .contact-grid {
+                        grid-template-columns: 1fr !important;
+                    }
+
+                    .form-row {
+                        grid-template-columns: 1fr !important;
+                    }
+                }
+            </style>
+        </section>
+
+        <!-- Maps placeholder -->
+        <section
+            style="height: 400px; background-color: #e5e5e5; display: flex; align-items: center; justify-content: center; color: var(--secondary-gray); font-weight: 600; letter-spacing: 1px;">
+            <i class="fas fa-map-marked-alt" style="margin-right: 0.5rem; font-size: 1.5rem;"></i> Google Maps
+            Integration Placeholder
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="logo" style="margin-bottom: 1.5rem; display: inline-flex; align-items: center; text-decoration: none;">
+                        <img src="./assets/logo.png" alt="Arise Aura Logo" style="height: 50px; filter: invert(1);">
+                        <span class="brand-name" style="color: var(--primary-black); margin-top: 0;">ARISE <span class="aura-gold">AURA</span></span>
+                    </a>
+                    <p class="footer-desc">Premium sports jerseys and custom athletic wear designed to elevate your game
+                        and your aura.</p>
+                    <div class="footer-socials">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="products.html">Shop Collection</a>
+                        <a href="custom-design.html">Custom Design</a>
+                        <a href="about.html">About Us</a>
+                        <a href="contact.html">Contact Us</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Support</h4>
+                    <div class="footer-links">
+                        <a href="faq.html">FAQ</a>
+                        <a href="size-guide.html">Size Guide</a>
+                        <a href="policy.html">Shipping Policy</a>
+                        <a href="policy.html">Returns & Exchanges</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <div class="footer-links">
+                        <a href="mailto:contact@arisearua.com"><i class="far fa-envelope"></i> contact@arisearua.com</a>
+                        <a href="tel:+917358641670"><i class="fas fa-phone"></i> +91 73586 41670</a>
+                        <a href="https://wa.me/+917358641670" target="_blank" style="color: #25D366;"><i
+                                class="fab fa-whatsapp"></i> WhatsApp Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 Arise Aura. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/products.js"></script>
+    <script src="./js/app.js"></script>
+    <script>
+        // Contact Form Submission to WhatsApp
+        document.addEventListener('DOMContentLoaded', () => {
+            const contactForm = document.querySelector('form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    const name = document.getElementById('name')?.value || '';
+                    const email = document.getElementById('email')?.value || '';
+                    const phone = document.getElementById('phone')?.value || '';
+                    const subject = document.getElementById('subject')?.value || 'General Inquiry';
+                    const message = document.getElementById('message')?.value || '';
+
+                    const text = `*Contact Form Submission*\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nSubject: ${subject}\n\nMessage:\n${message}`;
+                    const url = `https://wa.me/+917358641670?text=${encodeURIComponent(text)}`;
+                    window.open(url, '_blank');
+
+                    // Reset form
+                    contactForm.reset();
+                    alert('Thank you! We will get back to you soon via WhatsApp.');
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
