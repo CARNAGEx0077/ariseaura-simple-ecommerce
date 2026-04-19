@@ -269,6 +269,53 @@ select:focus {
   /* Makes logo white */
 }
 
+/* ========================================================= */
+/* PAGE SPECIFIC EXTRACTED STYLES                            */
+/* ========================================================= */
+
+/* Grid Overrides for Mobile */
+@media (max-width: 768px) {
+    .about-grid, .contact-grid, .form-row {
+        grid-template-columns: 1fr !important;
+    }
+    div[style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* FAQ */
+.faq-item { border-bottom: 1px solid var(--light-gray); }
+.faq-question { background: none; border: none; width: 100%; text-align: left; padding: 1.5rem 0; font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--primary-black); cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: var(--transition); }
+.faq-question:hover { color: var(--gold-accent); }
+.faq-answer { padding-bottom: 1.5rem; color: var(--secondary-gray); display: none; line-height: 1.6; }
+.faq-item.active .faq-answer { display: block; }
+.faq-item.active .faq-question i { transform: rotate(180deg); }
+
+/* Policy */
+.policy-section { background-color: var(--white); padding: 3rem; border-radius: var(--radius-md); box-shadow: 0 4px 20px rgba(0,0,0,0.03); margin-bottom: 3rem; }
+.policy-section h2 { color: var(--gold-accent); margin-bottom: 2rem; border-bottom: 1px solid var(--bg-color); padding-bottom: 1rem; }
+.policy-section h3 { margin-top: 2rem; margin-bottom: 1rem; }
+.policy-section ul { margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--secondary-gray); line-height: 1.6; }
+.policy-section p { margin-bottom: 1.5rem; color: var(--secondary-gray); line-height: 1.6; }
+
+/* Size Guide */
+.size-table { width: 100%; border-collapse: collapse; margin-bottom: 3rem; background-color: var(--white); border-radius: var(--radius-md); overflow: hidden; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); }
+.size-table th, .size-table td { padding: 1.25rem 1rem; text-align: center; border-bottom: 1px solid var(--light-gray); }
+.size-table th { background-color: var(--primary-black); color: var(--white); font-family: var(--font-heading); font-weight: 600; }
+.size-table tr:last-child td { border-bottom: none; }
+.size-table tr:hover td { background-color: var(--bg-color); }
+
+/* Hero Buttons */
+.hero-btn {
+  flex: 1 1 200px;
+  max-width: 250px;
+  padding: 1.1rem 1rem !important;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
 .nav-links {
   display: flex;
   gap: 1rem;
