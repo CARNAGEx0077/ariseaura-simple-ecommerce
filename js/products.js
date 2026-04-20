@@ -5,7 +5,7 @@ const productsData = [
     price: 1200,
     category: 'Football',
     sizes: ['S', 'M', 'L', 'XL'],
-    image: './assets/dummy/products/product1.png', // Using logo as placeholder until real images are added
+    image: './assets/dummy/products/product1.png',
     color: 'Blue'
   },
   {
@@ -52,6 +52,15 @@ const productsData = [
     sizes: ['S', 'M', 'L'],
     image: './assets/dummy/products/product6.png',
     color: 'Yellow'
+  },
+  {
+    id: 'p7',
+    name: 'Premium  Jersey',
+    price: 9999,
+    category: 'Running',
+    sizes: ['S', 'M', 'L'],
+    image: './assets/dummy/products/product7.png',
+    color: 'White'
   }
 ];
 
