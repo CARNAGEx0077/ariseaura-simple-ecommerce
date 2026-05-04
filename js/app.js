@@ -125,7 +125,15 @@ window.buyNowSingle = (product, size) => {
     alert('Please select a size first.');
     return;
   }
-  const text = `*New Order Inquiry*\n\nProduct: ${product.name}\nCategory: ${product.category}\nSize: ${size}\nPrice: ₹${product.price.toLocaleString('en-IN')}\n\nI would like to purchase this immediately.`;
+  const base = window.location.origin;
+  const imageUrl = product.image ? `${base}/${product.image.replace(/^\.\//,'')}` : '';
+  let text = `*New Order Inquiry*\n\n`;
+  text += `🛒 *Product:* ${product.name}\n`;
+  text += `📂 *Category:* ${product.category}\n`;
+  text += `📏 *Size:* ${size}\n`;
+  text += `💰 *Price:* ₹${product.price.toLocaleString('en-IN')}\n`;
+  if (imageUrl) text += `\n🖼 *Product Image:*\n${imageUrl}\n`;
+  text += `\nI would like to purchase this item immediately.`;
   const url = `https://wa.me/${WHATSAPP_NUM.replace('+', '')}?text=${encodeURIComponent(text)}`;
   window.open(url, '_blank');
 };
@@ -248,13 +256,17 @@ const setupUI = () => {
   if (checkoutBtn) {
     checkoutBtn.onclick = () => {
       if (cart.length === 0) return alert('Your cart is empty');
+      const base = window.location.origin;
       let text = '*New Order from Cart*\n\n';
       cart.forEach((item, i) => {
-        text += `${i+1}. ${item.name} (${item.size}) x ${item.qty} = ₹${(item.price * item.qty).toLocaleString('en-IN')}\n`;
+        const imageUrl = item.image ? `${base}/${item.image.replace(/^\.\//,'')}` : '';
+        text += `${i+1}. *${item.name}* (${item.size}) x ${item.qty} = ₹${(item.price * item.qty).toLocaleString('en-IN')}\n`;
+        if (imageUrl) text += `   🖼 ${imageUrl}\n`;
+        text += `\n`;
       });
       const totalItems = cart.reduce((acc, item) => acc + item.qty, 0);
       const totalAmount = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
-      text += `\n*TOTAL:* \u20B9${totalAmount.toLocaleString('en-IN')} for ${totalItems} items.`;
+      text += `*TOTAL:* ₹${totalAmount.toLocaleString('en-IN')} for ${totalItems} item${totalItems > 1 ? 's' : ''}.`;
 
       const url = `https://wa.me/${WHATSAPP_NUM.replace('+', '')}?text=${encodeURIComponent(text)}`;
       window.open(url, '_blank');
