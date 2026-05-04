@@ -1022,7 +1022,7 @@ textarea:focus::placeholder {
 /* ========================================================= */
 .cart-float {
   position: fixed;
-  bottom: calc(2rem + 56px + 1rem); /* sits directly above WhatsApp button */
+  bottom: calc(2rem + 56px + 1rem);
   right: 2rem;
   z-index: 999;
   width: 56px;
@@ -1037,6 +1037,10 @@ textarea:focus::placeholder {
   font-size: 1.4rem;
   box-shadow: var(--shadow-lg);
   cursor: pointer;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
   transition: transform var(--transition-base), box-shadow var(--transition-base), background var(--transition-base);
 }
 
@@ -1434,8 +1438,8 @@ textarea:focus::placeholder {
 /* ========================================================= */
 .featured-products-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
   margin-bottom: 3rem;
 }
 

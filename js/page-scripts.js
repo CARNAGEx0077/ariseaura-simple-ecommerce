@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Featured Products Grid (index.html)
     const featuredGrid = document.getElementById('featured-products-grid');
     if (featuredGrid && typeof productsData !== 'undefined') {
-        const featured = productsData.slice(0, 8);
+        const featured = productsData.slice(0, 6);
         featuredGrid.innerHTML = featured.map((item, i) => `
             <div class="product-card animate-on-scroll delay-${i + 1}" onclick="window.location.href='products.html'">
                 <div class="product-card-image">
