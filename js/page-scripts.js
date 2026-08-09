@@ -1,4 +1,7 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+    if (typeof loadProducts === 'function') {
+        await loadProducts();
+    }
 
     // 1. FAQ Interactions
     const faqItems = document.querySelectorAll('.faq-item');

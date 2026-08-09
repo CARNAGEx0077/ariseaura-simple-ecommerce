@@ -1,0 +1,14 @@
+{
+  "id": "p11",
+  "name": "Baggy Track Pants",
+  "price": 249,
+  "category": "Pants",
+  "sizes": [
+    "M",
+    "L",
+    "XL",
+    "2XL"
+  ],
+  "image": "./assets/dummy/products/product11.png",
+  "color": "Black"
+}

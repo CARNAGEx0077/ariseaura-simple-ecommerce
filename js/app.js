@@ -347,7 +347,10 @@ const initParallax = () => {
 
 
 // ================= INIT =================
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+  if (typeof loadProducts === 'function') {
+      await loadProducts();
+  }
   initPreloader();
   initCart();
   setupUI();

@@ -1,0 +1,14 @@
+{
+  "id": "p9",
+  "name": "Pro Striker Jersey",
+  "price": 249,
+  "category": "Football",
+  "sizes": [
+    "M",
+    "L",
+    "XL",
+    "2XL"
+  ],
+  "image": "./assets/dummy/products/product9.png",
+  "color": "Orange"
+}

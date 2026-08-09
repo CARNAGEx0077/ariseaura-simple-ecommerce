@@ -1,0 +1,14 @@
+{
+  "id": "p1",
+  "name": "Classic Football Jersey",
+  "price": 249,
+  "category": "Football",
+  "sizes": [
+    "M",
+    "L",
+    "XL",
+    "2XL"
+  ],
+  "image": "./assets/dummy/products/product1.png",
+  "color": "Blue"
+}

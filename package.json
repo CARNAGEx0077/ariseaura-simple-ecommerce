@@ -1,0 +1,12 @@
+{
+  "name": "ariseaura-ecommerce",
+  "version": "1.0.0",
+  "description": "Arise Aura simple ecommerce storefront",
+  "main": "index.html",
+  "scripts": {
+    "build": "node scripts/build.js"
+  },
+  "keywords": [],
+  "author": "Arise Aura",
+  "license": "ISC"
+}

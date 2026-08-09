@@ -1,0 +1,14 @@
+{
+  "id": "p6",
+  "name": "Premium Running Jersey",
+  "price": 249,
+  "category": "Running",
+  "sizes": [
+    "M",
+    "L",
+    "XL",
+    "2XL"
+  ],
+  "image": "./assets/dummy/products/product6.png",
+  "color": "Yellow"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "p8",
+  "name": "Elite Training Jersey",
+  "price": 249,
+  "category": "Training",
+  "sizes": [
+    "M",
+    "L",
+    "XL",
+    "2XL"
+  ],
+  "image": "./assets/dummy/products/product8.png",
+  "color": "Navy"
+}

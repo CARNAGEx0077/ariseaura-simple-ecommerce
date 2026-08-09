@@ -1,0 +1,26 @@
+backend:
+  name: github
+  repo: CARNAGEx0077/ariseaura-simple-ecommerce
+  branch: main
+  base_url: https://ariseaura-simple-ecommerce.vercel.app # Adjust to actual deployed URL if needed
+  auth_endpoint: api/auth
+
+media_folder: "assets/uploads"
+public_folder: "./assets/uploads"
+
+collections:
+  - name: "products"
+    label: "Products"
+    folder: "content/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Product Name", name: "name", widget: "string"}
+      - {label: "Price", name: "price", widget: "number", value_type: "int"}
+      - {label: "Category", name: "category", widget: "select", options: ["Football", "Basketball", "Cricket", "Soccer", "Baseball", "Running", "Training", "Pants", "T-Shirts", "Hoodies"]}
+      - {label: "Description", name: "description", widget: "text", required: false}
+      - {label: "Sizes", name: "sizes", widget: "list", default: ["S", "M", "L", "XL", "2XL"]}
+      - {label: "Color", name: "color", widget: "string", required: false}
+      - {label: "Product Image", name: "image", widget: "image"}
+      - {label: "Featured Product", name: "featured", widget: "boolean", default: false, required: false}
+      - {label: "Available", name: "available", widget: "boolean", default: true, required: false}

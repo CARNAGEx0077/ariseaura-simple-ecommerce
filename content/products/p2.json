@@ -1,0 +1,14 @@
+{
+  "id": "p2",
+  "name": "Basketball Pro Jersey",
+  "price": 249,
+  "category": "Basketball",
+  "sizes": [
+    "M",
+    "L",
+    "XL",
+    "2XL"
+  ],
+  "image": "./assets/dummy/products/product2.png",
+  "color": "Red"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "p7",
+  "name": "Premium Sports Jersey",
+  "price": 249,
+  "category": "Running",
+  "sizes": [
+    "M",
+    "L",
+    "XL",
+    "2XL"
+  ],
+  "image": "./assets/dummy/products/product7.png",
+  "color": "White"
+}
