@@ -4,11 +4,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Arise Aura - Content Manager</title>
+  </head>
+  <body>
+    <!-- Decap CMS will mount here -->
+    <div id="nc-root"></div>
+
+    <!-- 1. Signal manual init BEFORE the Decap bundle loads -->
     <script>
       window.CMS_MANUAL_INIT = true;
     </script>
-    <!-- Include the script that builds the page and powers Decap CMS -->
+
+    <!-- 2. Load Decap CMS bundle -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+    <!-- 3. Initialize CMS after bundle and mount element are both ready -->
     <script>
       CMS.init({
         config: {
@@ -46,9 +55,5 @@
         }
       });
     </script>
-  </head>
-  <body>
-    <!-- Decap CMS will mount here -->
-    <div id="nc-root"></div>
   </body>
 </html>
