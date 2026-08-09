@@ -58,7 +58,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     // 3. Featured Products Grid (index.html)
     const featuredGrid = document.getElementById('featured-products-grid');
     if (featuredGrid && typeof productsData !== 'undefined') {
-        const featured = productsData.slice(0, 6);
+        // Show products marked featured=true; fall back to first 6 if none are marked
+        let featured = productsData.filter(p => p.available !== false && p.featured === true);
+        if (featured.length === 0) featured = productsData.filter(p => p.available !== false).slice(0, 6);
         featuredGrid.innerHTML = featured.map((item, i) => `
             <div class="product-card animate-on-scroll delay-${i + 1}" onclick="window.location.href='products.html'">
                 <div class="product-card-image">
@@ -78,6 +80,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // 4. Shop Page Filters (products.html)
     const shopGrid = document.getElementById('shop-grid');
+    // Only show products that are marked available (default true)
+    const availableProducts = productsData.filter(p => p.available !== false);
     if (shopGrid && typeof productsData !== 'undefined') {
         const sizeFilter = document.getElementById('filter-size');
         const priceFilter = document.getElementById('filter-price');
@@ -120,7 +124,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         function filterProducts() {
             const sVal = sizeFilter.value;
             const pVal = priceFilter.value;
-            let filtered = productsData;
+            let filtered = availableProducts;
             if (sVal !== 'all') {
                 filtered = filtered.filter(p => p.sizes.includes(sVal));
             }
@@ -145,7 +149,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
 
         // Initialize Products
-        renderProducts(productsData);
+        renderProducts(availableProducts);
         if (window.observeNewElements) window.observeNewElements();
     }
 });

@@ -1,0 +1,3 @@
+# Build artifact — generated from content/products/*.json during Vercel deployment.
+# Do not edit manually. Edit products via the /admin CMS instead.
+products.json

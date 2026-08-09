@@ -28,8 +28,11 @@ export default async function handler(req, res) {
     }
     
     const token = data.access_token;
-    
-    // Decap CMS requires a specific message format sent to window.opener
+
+    if (!token) {
+      return res.status(500).send('GitHub did not return an access token. Check your OAuth app credentials.');
+    }
+
     const script = `
       <script>
         const receiveMessage = (message) => {

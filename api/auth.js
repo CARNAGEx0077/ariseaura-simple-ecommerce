@@ -1,6 +1,6 @@
 export default function handler(req, res) {
   const clientId = process.env.OAUTH_CLIENT_ID;
-  const scope = 'repo,user';
+  const scope = 'public_repo';
 
   if (!clientId) {
     return res.status(500).send('OAuth Client ID not configured. Please set OAUTH_CLIENT_ID in Vercel Environment Variables.');
