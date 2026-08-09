@@ -34,7 +34,7 @@ Because this system runs entirely on free infrastructure without a traditional b
 
 ## 2. Accessing the Admin Panel
 
-1. Go to: `https://your-website-url.vercel.app/admin`
+1. Go to: `https://your-website-url.vercel.app/admin/login.html`
 2. You will see a "Login with GitHub" button.
 3. Click it and authorize the application. You are now in the Admin Dashboard!
 
