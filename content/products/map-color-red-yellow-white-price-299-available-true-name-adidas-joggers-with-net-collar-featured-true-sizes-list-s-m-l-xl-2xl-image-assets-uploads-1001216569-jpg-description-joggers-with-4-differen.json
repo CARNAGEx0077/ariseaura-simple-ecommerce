@@ -1,0 +1,17 @@
+{
+  "color": "RED,YELLOW,WHITE",
+  "price": 299,
+  "available": true,
+  "name": "ADIDAS JOGGERS WITH NET COLLAR",
+  "featured": true,
+  "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL"
+  ],
+  "image": "assets/uploads/1001216569.jpg",
+  "description": "JOGGERS WITH 4 DIFFERENT COLOURS",
+  "category": "Pants"
+}
