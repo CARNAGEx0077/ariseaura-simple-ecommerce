@@ -1,0 +1,16 @@
+{
+  "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL"
+  ],
+  "featured": true,
+  "available": true,
+  "name": "TRAIL UPLOAD",
+  "price": 999,
+  "category": "Football",
+  "description": "AWFGawg",
+  "image": "assets/uploads/whatsapp-image-2026-08-12-at-1.33.13-pm.jpeg"
+}
